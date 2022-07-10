@@ -221,7 +221,7 @@ public class Zull1095_Mentions {
     public void userRemovesThe(String tag) {
 
         BrowserUtils.sleep(2);
-        Assert.assertFalse(basePage.tagLocator.isDisplayed());
+        Assert.assertFalse(basePage.tagLocator.getText().contains(tag));
 
     }
 

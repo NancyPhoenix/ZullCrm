@@ -89,7 +89,7 @@ public class BasePage {
     @FindBy(xpath = "(//span[@class='feed-add-post-del-but'])[2]")
     public WebElement tagDeleteButton;
 
-    @FindBy(xpath = "//span[@class='feed-add-post-tags']")
+    @FindBy(xpath = "//div[@class='feed-post-text-block']")
     public WebElement tagLocator;
 
 
