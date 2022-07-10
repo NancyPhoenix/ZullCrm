@@ -86,7 +86,7 @@ public class BasePage {
     @FindBy(xpath = "//a[@class='feed-com-tag']")
     public WebElement actualTag;
 
-    @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
+    @FindBy(xpath = "(//span[@class='feed-add-post-del-but'])[2]")
     public WebElement tagDeleteButton;
 
     @FindBy(xpath = "//span[@class='feed-add-post-tags']")

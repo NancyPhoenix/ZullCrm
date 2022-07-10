@@ -220,8 +220,8 @@ public class Zull1095_Mentions {
     @Then("User removes the {string}")
     public void userRemovesThe(String tag) {
 
-        // BrowserUtils.sleep(2);
-        //Assert.assertFalse(basePage.tagLocator.isDisplayed());
+        BrowserUtils.sleep(2);
+        Assert.assertFalse(basePage.tagLocator.isDisplayed());
 
     }
 
