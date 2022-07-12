@@ -16,7 +16,7 @@ Feature: As a user, I should be able to add link, insert video, mention, quote, 
   @AC2
   Scenario Outline: User should be able to attach link to specified text
     When User clicks Link button
-    When User adds a "<Text>" and "<Link>"
+    When User fills out the text box with "<Text>" and link ribbon with "<Link>"
     And User clicks Save button
     When User clicks Send button at Messages Tab
     Then User sees the "<Link>" attached to a specific "<Text>"
@@ -31,15 +31,15 @@ Feature: As a user, I should be able to add link, insert video, mention, quote, 
   @AC3
   Scenario Outline: User should be able to insert YouTube and Vimeo video
     When User clicks Insert Video button
-    When User enters "<URL>" of the Video
+    When User enters "<URL>" of the Video from "<Type>"
     And User clicks Save button at Video popup
     When User clicks Send button at Messages Tab
     Then User sees the video URL at Activity Stream
 
     Examples: User uses the following links
-      | URL                                         |
-      | https://www.youtube.com/watch?v=ZLl6jo_HUwc |
-      | https://vimeo.com/301619060                 |
+      | URL                                         | Type    |
+      | https://www.youtube.com/watch?v=ZLl6jo_HUwc | YouTube |
+      | https://vimeo.com/301619060                 | Vimeo   |
 
   @AC4
   Scenario Outline: User should be able to add quotes

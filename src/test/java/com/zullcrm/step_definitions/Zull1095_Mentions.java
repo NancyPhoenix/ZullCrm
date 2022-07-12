@@ -80,12 +80,11 @@ public class Zull1095_Mentions {
         basePage.linkButton.click();
     }
 
-    @And("User adds a {string} and {string}")
-    public void userAddsAAnd(String text, String link) {
+    @When("User fills out the text box with {string} and link ribbon with {string}")
+    public void userFillsOutTheTextBoxWithAndLinkRibbonWith(String text, String link) {
 
         basePage.inputText.sendKeys(text);
         basePage.inputUrl.sendKeys(link);
-
 
     }
 
@@ -116,8 +115,8 @@ public class Zull1095_Mentions {
 
     }
 
-    @When("User enters {string} of the Video")
-    public void userEntersOfTheVideo(String url) {
+    @When("User enters {string} of the Video from {string}")
+    public void userEntersOfTheVideoFrom(String url) {
 
         basePage.videoInputBox.sendKeys(url);
 
@@ -224,6 +223,7 @@ public class Zull1095_Mentions {
         Assert.assertFalse(basePage.tagLocator.getText().contains(tag));
 
     }
+
 
 
 }
