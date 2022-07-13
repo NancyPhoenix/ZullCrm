@@ -11,7 +11,7 @@ Feature: As a user, I should be able to add link, insert video, mention, quote, 
     When User adds Department Employees
     When User clicks Send button at Messages Tab
     Then User sees mentioned employees on Activity Stream
-      | helpdesk1@cybertekschool.com |
+      | helpdesk22@cybertekschool.com |
 
   @AC2
   Scenario Outline: User should be able to attach link to specified text
