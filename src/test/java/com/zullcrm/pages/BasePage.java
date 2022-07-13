@@ -23,8 +23,8 @@ public class BasePage {
     @FindBy(xpath = "//a[contains(@id,\"destDepartmentTab\")]")
     public WebElement employeesAndDepartmentsButton;
 
-    @FindBy(xpath = "(//a[contains(@class,\"bx-finder-company-department-employee\")])[1]")
-    public WebElement firstEmployeeUsername;
+    @FindBy(xpath = "(//div[@class='bx-finder-company-department-employee-name'])[1]")
+    public List<WebElement> employeeUsernames;
 
     @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']/a[contains(text(),\"cybertekschool\")]")
     public WebElement verifyMention;

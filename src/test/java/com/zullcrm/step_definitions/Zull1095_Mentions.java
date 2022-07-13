@@ -11,6 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 public class Zull1095_Mentions {
 
@@ -56,17 +57,24 @@ public class Zull1095_Mentions {
 
     }
 
-    @When("User adds Department Employees")
-    public void userAddsDepartmentEmployees() {
+    @When("User clicks on first Department Employee username")
+    public void userClicksOnFirstDepartmentEmployeeUsername(String employeeUsername) {
 
-        basePage.firstEmployeeUsername.click();
+        for (WebElement each : basePage.employeeUsernames) {
 
+            if(each.getText().equalsIgnoreCase(employeeUsername))
+                each.click();
+
+        }
+        //basePage.firstEmployeeUsername.click();
     }
 
-    @Then("User sees mentioned employees on Activity Stream")
-    public void userSeesMentionedEmployeesOnActivityStream(String username) {
+    @Then("User sees mentioned Employee username on Activity Stream")
+    public void userSeesMentionedEmployeeUsernameOnActivityStream(String employeeUsername) {
 
-       Assert.assertEquals(username, basePage.verifyMention.getText());
+       String expectedResult = employeeUsername;
+       String actualResult = basePage.verifyMention.getText();
+       Assert.assertEquals(expectedResult, actualResult);
 
     }
 
