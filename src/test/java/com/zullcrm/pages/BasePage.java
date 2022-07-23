@@ -23,7 +23,7 @@ public class BasePage {
     @FindBy(xpath = "//a[contains(@id,\"destDepartmentTab\")]")
     public WebElement employeesAndDepartmentsButton;
 
-    @FindBy(xpath = "(//div[@class='bx-finder-company-department-employee-name'])[1]")
+    @FindBy(xpath = "//div[@class='bx-finder-company-department-employee-name']")
     public List<WebElement> employeeUsernames;
 
     @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']/a[contains(text(),\"cybertekschool\")]")

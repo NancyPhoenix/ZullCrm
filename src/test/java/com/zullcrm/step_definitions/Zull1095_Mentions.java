@@ -11,6 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
 public class Zull1095_Mentions {
@@ -57,21 +58,27 @@ public class Zull1095_Mentions {
 
     }
 
-    @When("User clicks on first Department Employee username")
-    public void userClicksOnFirstDepartmentEmployeeUsername(String employeeUsername) {
+    @When("User clicks on Department Employee username")
+    public void userClicksOnDepartmentEmployeeUsername(String employeeUsername) {
 
+    try{
         for (WebElement each : basePage.employeeUsernames) {
 
             if(each.getText().equalsIgnoreCase(employeeUsername))
                 each.click();
 
         }
-        //basePage.firstEmployeeUsername.click();
+    }
+    catch (StaleElementReferenceException e){
+
+    }
+
     }
 
     @Then("User sees mentioned Employee username on Activity Stream")
     public void userSeesMentionedEmployeeUsernameOnActivityStream(String employeeUsername) {
 
+       BrowserUtils.sleep(2);
        String expectedResult = employeeUsername;
        String actualResult = basePage.verifyMention.getText();
        Assert.assertEquals(expectedResult, actualResult);
